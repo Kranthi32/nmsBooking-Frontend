@@ -1,10 +1,20 @@
-import React, { StrictMode, createElement } from 'react';
-import ReactDOM  from 'react-dom';
-import './index.css'; // Import CSS file for styling
-
-
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+import './index.css'; 
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";   
-//import ThemeSwitcher from './ThemeSwitcher/ThemeSwitcher'
-import App from "./App";
- ReactDOM.render(<App />, document.getElementById('root'));
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import AdminLogin from "./components/AdminLogin"; 
+import App from './App'
+
+function AppWrapper() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    
+    setLoggedIn(true);
+  };
+
+  return loggedIn ? <App /> : <AdminLogin onLogin={handleLogin} />;
+}
+
+ReactDOM.render(<AppWrapper />, document.getElementById('root'));

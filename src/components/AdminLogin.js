@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Container, Form, Button } from 'react-bootstrap';
 
-function AdminLogin() {
+function AdminLogin({ onLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const history = useHistory();
 
   const handleLogin = () => {
-    // Implement login logic here
-    // Redirect to dashboard if login successful
-    history.push('/dashboard');
+   
+    onLogin();
   };
 
   return (

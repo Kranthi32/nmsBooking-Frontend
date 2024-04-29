@@ -21,7 +21,7 @@ class App extends React.Component {
                         <li><NavLink to="/about">About</NavLink></li>
                         <li><NavLink to="/contact">Contact Us</NavLink></li>
                         <li><NavLink to="/view-movies">View Movies</NavLink></li>
-                        <li><NavLink to="/manage-movies">Manage Movies</NavLink></li>
+                        <li><NavLink to="/manage-movies" >Manage Movies</NavLink></li>
                     </ul>
 
                     <div className="content">
